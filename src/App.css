@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.list{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 100px;
+  padding-left: 200px;
+  padding-right: 200px;
+  grid-row-gap: 100px;
+  grid-column-gap: 100px;
+  /*grid-auto-rows: 150px;*/
+}
+
+.image {
+  border: 2px solid darkgrey;
+  width: 400px;
+  height: 300px;
+  border-radius: 5%;
+}
+
+
+.search{
+	padding: 3em;
+	border-bottom: 2px solid #f0f0f5;
+}
+
+.searchBox{ 
+  /*border: 2px solid darkgrey;*/
+  width: 50%;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 40px;
+  padding:8px 15px;
+  background:rgba(50, 50, 50, 0.1);
+  border:0px solid #dbdbdb;
+}
