@@ -1,13 +1,23 @@
 import React from 'react'
 import ImageItem from './ImageItem'
 
-const ImageList = (props) => {
-	const imageItems = props.images.map((image, index) => {
-    return <ImageItem key={index} image={image}/>
-  	})
+class ImageList extends React.Component {
+
+	render(){
+
+    const images = this.props.images
+	const imageItems = images.map((image, index) => {
+	   					return (
+	   					<ImageItem 
+	   						onClick={this.props.onClick} 
+	   						key={index} 
+	   						image={image}
+	   					/>
+	  				  )})
 	return(
-		<div className="list">{imageItems}</div>
-	)
+		<div className="List section flex-container">{imageItems}</div>
+	  )
+	}
 }
 
 export default ImageList

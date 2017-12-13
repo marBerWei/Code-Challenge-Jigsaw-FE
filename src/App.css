@@ -1,8 +1,83 @@
 .App {
   text-align: center;
+  padding: 20px;
 }
 
-.list{
+.header {
+  /*border: blue solid;*/
+  border-top: #c5d5cb dotted 20px;
+  border-left: #9fa8a3 dotted 20px;
+  border-right: #e3e0cf dotted 20px;
+  padding-top: 50px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: white;
+  height: 250px;
+}
+
+.container{
+  /*border: #c5d5cb dotted 10px;*/
+  border-top: #e3e0cf dotted 20px;
+  border-left: #c5d5cb dotted 20px;
+  border-right: #9fa8a3 dotted 20px;
+  padding: 5px;
+}
+
+.name {
+  padding: 40px;
+  display: block;
+  border: #9fa8a3 dotted 10px;
+  border-radius: 40px;
+  padding: 50px;
+  width: 450px;
+  background-color: white;
+  /*color: black;*/
+  grid-column: 1/2;
+  font-family: 'Pangolin', cursive;
+  font-family: 'Short Stack', cursive;
+  font-size: 70px;
+  color: #9fa8a3;
+  height: 40px;
+  text-decoration: none;
+  /*border: blue solid;*/
+}
+
+.nav {
+  /*border: blue solid;*/
+  padding: 40px;
+  /*background-color: pink;*/
+  color: pink;
+  grid-column: 3/4;
+  height: 40px;
+  font-size: 40px;
+}
+
+.nav .navItem {
+
+  padding: 20px;
+ /* padding-bottom: 10px;*/
+/*  border: blue solid 1px;*/
+  font-family: 'Pangolin', cursive;
+  font-family: 'Short Stack', cursive;
+  font-size: 30px;
+  color: pink;
+  /*line-height: 100%;*/
+  text-decoration: none;
+  
+}
+
+.nav .navItem:hover{
+  background-color: lightgrey;
+  color: white;
+  transition: .5s background-color;
+  border-radius: 10%;
+  padding: 3px;
+}
+
+/*.List{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 100px;
@@ -10,31 +85,126 @@
   padding-right: 200px;
   grid-row-gap: 100px;
   grid-column-gap: 100px;
-  /*grid-auto-rows: 150px;*/
+  /*grid-auto-rows: 150px;
+}*/
+
+/*IMAGES*/
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-.image {
-  border: 2px solid darkgrey;
-  width: 400px;
-  height: 300px;
-  border-radius: 5%;
+.item {
+  padding: 10px;
+  position: relative;
+  width: 15%;
+  margin: 30px;
+  height: auto;
+  border: #9fa8a3 dotted 10px;
+}
+
+.item:hover .overlay {
+  bottom: 0;
+  height: 100%;
+}
+
+.item:hover .image-overlay {
+  height: 100%;
+  opacity: .3;
+}
+
+.item:hover .thumb {
+  width: 100%;
+  height: auto;
+}
+
+.thumb {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  background-color: darkgrey;
+  opacity: 1;
+  overflow: hidden;
+  width: 100%;
+  height:0;
+  transition: .5s ease;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .2s ease;
+  background-color: white;
+  border-radius: 5px;
+}
+
+
+.text {
+  white-space: nowrap;
+  color: green;
+  font-size: 25px;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+/*.text a {
+  color: #00c8c8;
+  text-decoration: none;
+} useful for having a link in the overlay */
+
+
+
+
+
+
+/*search box*/
+.searchContainer {
+/*  padding-left: 600px;
+  padding-right: 600px;
+  padding-top: 15px;*/
+  border-bottom: 2px solid #f0f0f5;
 }
 
 
 .search{
-	padding: 3em;
-	border-bottom: 2px solid #f0f0f5;
+	padding: 30px;
+  /*border: #c5d5cb solid 10px;*/
+
 }
 
 .searchBox{ 
   /*border: 2px solid darkgrey;*/
-  width: 50%;
-  padding: 20px;
+  width: 100%;
+  /*padding: 20px;*/
   border-radius: 10px;
   box-sizing: border-box;
   resize: vertical;
   font-size: 40px;
   padding:8px 15px;
   background:rgba(50, 50, 50, 0.1);
-  border:0px solid #dbdbdb;
+  border: #c5d5cb solid 3px;
+  /*border:0px solid #dbdbdb;*/
+
 }
+/*comment box*/

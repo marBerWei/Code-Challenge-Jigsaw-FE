@@ -4,17 +4,26 @@ import { fetchImages, searchImages } from '../../actions/image'
 import ImageSearch from './ImageSearch'
 import { connect } from 'react-redux'
 import { Route, Link, Switch, Redirect } from 'react-router-dom'
+import ModalExampleControlled from './ModalExample'
 
 class ImageContainer extends React.Component {
+
+	state ={
+		clicked: false
+	}
 	
 	componentDidMount() {
     	this.props.fetchImages("cat")
   	}
+
+  	onClick = () => {
+		this.setState({ clicked: true })
+		console.log(this.state.clicked)
+	}
 	render(){
 		return(
-			<div>
-			  <ImageSearch searchImages={this.props.searchImages}/>
-			  <ImageList images={this.props.images}/>
+			<div className="container">
+			  <ImageList onClick={this.onClick} images={this.props.images}/>
 			</div>
 		)
 	}
