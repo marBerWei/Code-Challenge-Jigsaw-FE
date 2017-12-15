@@ -7,7 +7,6 @@ class NavBar extends React.Component {
       <div className="nav">
       	<NavLink activeClassName="active" className="navItem" to="/about">About</NavLink>
         <NavLink activeClassName="active" className="navItem" to="/images">Browse</NavLink>
-        <NavLink activeClassName="active" className="navItem" to="/">Home</NavLink>
       </div>
     )
   }
