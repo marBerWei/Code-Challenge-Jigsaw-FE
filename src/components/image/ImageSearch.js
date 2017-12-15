@@ -1,5 +1,5 @@
 import React from 'react'
-import { fetchImages, searchImages } from '../../actions/image'
+import { fetchImages, searchImages, searchTerm } from '../../actions/image'
 import { connect } from 'react-redux'
 
 class ImageSearch extends React.Component {
@@ -25,6 +25,7 @@ class ImageSearch extends React.Component {
 	onSubmit= (event) => {
 		event.preventDefault()
 		this.props.searchImages(this.state.searchParams)
+		this.props.searchTerm(this.state.searchParams)
 	}
 
 
@@ -46,6 +47,12 @@ class ImageSearch extends React.Component {
 	}
 }
 
+function mapStateToProps(state) {
+  return {
+    filter: state.filter,
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return {
     fetchImages: () => {
@@ -55,8 +62,11 @@ function mapDispatchToProps(dispatch) {
     searchImages: (title) => {
                 /// action creator from './actions/images'
       dispatch(searchImages(title))
+    },
+    searchTerm: (term) => {
+      dispatch(searchTerm(term))
     }
   }
 }
 
-export default connect(null, mapDispatchToProps) (ImageSearch)
+export default connect(mapStateToProps, mapDispatchToProps) (ImageSearch)

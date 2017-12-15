@@ -33,7 +33,7 @@ class ImageItem extends React.Component {
 			imageId = this.props.image.id
 		}
 
-		console.log(imageId)
+		//console.log(imageId)
 		return(
 
 			
@@ -45,8 +45,8 @@ class ImageItem extends React.Component {
 			  
 			  <div className="image-overlay">
 	          <div className="text">
-	          	<Link to={"/images/" + imageId} >add a comment</Link>
 	            <a><ModalExampleControlled img={displayImage}/></a>
+	            <Link to={"/images/" + imageId} >add a comment</Link>
 	          </div>
 	      </div>
 			</div>

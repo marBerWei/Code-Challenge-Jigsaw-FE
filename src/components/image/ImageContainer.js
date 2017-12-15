@@ -14,7 +14,7 @@ class ImageContainer extends React.Component {
 	}
 	
 	componentDidMount() {
-    	this.props.fetchImages("cat")
+    	this.props.fetchImages()
   }
 
   onClick = () => {
@@ -22,28 +22,32 @@ class ImageContainer extends React.Component {
 		//console.log(this.state.clicked)
 	}
 
+  isFiltered =() => {
+    if(this.props.filter.isFiltered === true){
+        console.log("true filter from the container")
+    }
+  }
+
+  images = () => {
+    return this.props.images.filter(image => image.type !== "video/mp4")
+  }
+
 	render(){
     
-    const images = this.props.images.filter(image => image.type !== "video/mp4")
-    // console.log(this.props)
 		return(
       <div>
-			<Route exact path="/images" render={(props) => <ImageList images={this.props.images} {...props} />}/>
+			<Route exact path="/images" render={(props) => <ImageList images={this.images()} {...props} />}/>
         <Route path="/images/:id" render={(routeProps) => {         
           const id = routeProps.match.params.id
-          console.log(id)
           const image = this.props.images.filter((image) => {
-            console.log(image)
-            console.log(image.id)
             if(image.images){
               return image.images[0].id === id
-              
             } else {
               return image.id === id
             }
           })
           console.log(image)
-          return <ImageDetails id={id} image={image} {...routeProps} />
+          return <ImageDetails image={image} {...routeProps} />
       }} />
       </div>
 		)
@@ -52,6 +56,7 @@ class ImageContainer extends React.Component {
 
 function mapStateToProps(state) {
   return {
+    filter: state.filter,
     images: state.list,
     isFetching: state.isFetching
   }

@@ -5,10 +5,6 @@
 }
 
 .header {
-  /*border: blue solid;*/
-  /*border-top: #c5d5cb dotted 20px;
-  border-left: #9fa8a3 dotted 20px;
-  border-right: #e3e0cf dotted 20px;*/
   padding-top: 5px;
   padding-left: 5px;
   padding-right: 5px;
@@ -16,7 +12,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   background-color: white;
-  /*height: 150px;*/
   border-bottom: 2px solid #f0f0f5;
 }
 
@@ -33,9 +28,6 @@
   border-left: red dotted 7px;
   border-right: red dotted 7px;
   background: #EDEDED;
-  /*padding-top: 10px;
-  padding-right: 10px;
-  padding-right: 10px;*/
 }
 
 .name {
@@ -61,7 +53,7 @@
   padding: 40px;
   /*background-color: pink;*/
   color: black;
-  grid-column: 11/16;
+  grid-column: 12/16;
   /*height: 40px;*/
   /*font-size: 40px;*/
 }
@@ -87,6 +79,51 @@
   padding: 15px;
 }
 
+.search{
+  padding: 15px;
+  grid-column: 3/10;
+  padding-left: 40px
+  /*border: #c5d5cb solid 10px;*/
+}
+
+.searchBox{ 
+  /*border: 2px solid darkgrey;*/
+  width: 100%;
+  height: 70px;
+  /*padding: 20px;*/
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+  font-size: 25px;
+  padding:8px 15px;
+  background: rgb(240,240,240);
+  border: rgb(240,240,240) solid 0px;
+  /*border:0px solid #dbdbdb;*/
+}
+
+
+.radioButtonContainer{
+  grid-column: 10/11;
+/*  border: 3px black solid;*/
+  padding: 1px ;
+}
+
+.radioButtonForm{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+/*  border: 3px green solid;*/
+  
+}
+
+.radio{
+  background: white;
+  padding: 15px;
+  margin: 25px;
+ /* border: 1px red solid;*/
+  font-size: 20px!important;
+}
+
+
 /*.List{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -103,7 +140,6 @@
   align-items: justify;
   /*flex-direction: row | row-reverse | column | column-reverse;
   align-items: start;*/
-  justify-content: bottom;
   flex-grow: 1;
   justify-content: justify;
 }
@@ -210,33 +246,12 @@
 } useful for having a link in the overlay */
 
 
-.search{
-	padding: 15px;
-  grid-column: 3/11;
-  padding-left: 40px
-  /*border: #c5d5cb solid 10px;*/
-}
 
-.searchBox{ 
-  /*border: 2px solid darkgrey;*/
-  width: 100%;
-  height: 70px;
-  /*padding: 20px;*/
-  border-radius: 5px;
-  box-sizing: border-box;
-  resize: vertical;
-  font-size: 25px;
-  padding:8px 15px;
-  background: rgb(240,240,240);
-  border: rgb(240,240,240) solid 0px;
-  /*border:0px solid #dbdbdb;*/
-
-}
 
 .modalButton{
   display: box;
   /*border: 3px red solid;*/
-  height: 500px;
+  height: 100%;
   padding: 4em;
   padding-top: 12em;
   color:lightgrey;
@@ -244,7 +259,7 @@
 
 .modalPic{
   border: 3px black solid;
-  transform: scale(1.5);
+  transform: scale(2,2);
   max-height: 1000px;
   width: 100%;
 }
@@ -261,7 +276,7 @@
 
 .imageDetails{
   background: white;
-  border: 5px purple solid;
+  /*border: 5px purple solid;*/
   padding: 20px;
 }
 
@@ -273,34 +288,34 @@
 /*COMMENTS*/
 
 .commentBox{
-  border: 1px solid red;
-  padding: 8px 15px;
+/*  border: 1px solid red;*/
+  /*padding: 8px 15px;*/
   background: white;
 }
 .commentList{
-  border: 1px solid orange;
-  padding: 30px;
+/*  border: 1px solid orange;*/
+  padding: 5px;
 }
 
 .comment{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  border: 1px solid green;
+/*  border: 1px solid green;*/
   padding: 5px;
   width: 100%;
   height: 140px;
   background-color: white;
 }
 .commentAuthor{
-  border: 1px solid blue;
+/*  border: 1px solid blue;*/
   padding: 5px;
   grid-column: 1;
   grid-row: 1;
 }
 
 .commentContent{
-  border: 1px dotted blue;
+/*  border: 1px dotted blue;*/
   font-size: 25px;
   padding: 5px;
   grid-column: 2/7;
@@ -308,12 +323,12 @@
 }
 
 .commentTime{
-  border: 1px solid blue;
+/*  border: 1px solid blue;*/
   grid-column: 1;
   grid-row: 2;
 }
 .commentForm{
-  border: 1px solid yellow;
+/*  border: 1px solid yellow;*/
   padding: 50px;
 }
 
@@ -325,7 +340,7 @@
   box-sizing: border-box;
   resize: vertical;
   font-size: 25px;
-  padding:8px 15px;
+  padding:5px 15px;
   background: rgb(white);
   border: rgb(240,240,240) solid 3px;
 }
@@ -343,7 +358,55 @@
   border: rgb(240,240,240) solid 3px;
 }
 
+.backToSearch {
+  font-size: 40px;
+  padding: 20px;
+  padding-top: 70px;
+  padding-left:100px;
+  background: black;
+  border-radius: 10px;
+}
 
+.aboutPage{
+  padding: 10%;
+  padding-left: 30%;
+  padding-right: 30% ;
+}
 
+.title {
+  font-size: 80px;
+  padding: 50px;
+  font-weight: bold
+}
 
+.content {
+   font-size: 40px;
+   padding: 50px;
+}
 
+.picsty {
+  /*border: red solid 1px;*/
+  padding: 15px;
+  /*width: 60px;*/
+ /* border-radius: 50%;*/
+  /*background-color: red;*/
+  /*color: black;*/
+  font-family: 'Barlow', sans-serif;
+  font-family: 'Leckerli One', cursive;
+  font-size: 50px;
+  color: red;
+  /*height: 40px;*/
+  text-decoration: none;
+}
+
+.button {
+  background: red;
+  border-radius: 40px;
+  padding: 30px;
+  font-size: 40px;
+  
+}
+
+.button:hover {
+  cursor: pointer;
+}

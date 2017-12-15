@@ -1,11 +1,7 @@
 import React from 'react'
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
-
-var data = [
-      {author: "Pete Hunt", text: "This is one comment", time:'Thu Dec 14 2017 09:46:12 GMT-0500 (EST)'},
-      {author: "Jordan Walke", text: "This is *another* comment", time:'Thu Dec 13 2017 10:46:12 GMT-0500 (EST)'}
-];
+import { connect } from 'react-redux'
 
 class CommentBox extends React.Component {
   render(){
@@ -13,11 +9,17 @@ class CommentBox extends React.Component {
     return(
         <div className="commentBox">
             <h1>Comments</h1>
-            <CommentList data={data}/>
-            <CommentForm id={this.props.id}/>
+            <CommentList data={this.props.comment}/>
+            <CommentForm image={this.props.image}/>
         </div>
       )
   }
 }
 
-export default CommentBox
+function mapStateToProps(state) {
+  return {
+    comment: state.comment
+  }
+}
+
+export default connect(mapStateToProps)(CommentBox)

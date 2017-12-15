@@ -4,6 +4,27 @@ function fetchingImages() {
   }
 }
 
+export function addComment(comment){
+  return {
+    type:"ADD_COMMENT",
+    payload: comment
+  }
+}
+
+export function searchTerm(term){
+  return {
+    type: "SEARCH-TERM",
+    payload: term
+  }
+}
+
+export function filterImages(filter) {
+  return {
+    type: "FILTER_IMAGES",
+    payload: filter
+  }
+}
+
 function fetchedImages(images) {
   return {
     type: "FETCHED_IMAGES",
@@ -14,7 +35,7 @@ function fetchedImages(images) {
 export function fetchImages() {
   return function(dispatch) {
     dispatch(fetchingImages())
-    fetch(`https://api.imgur.com/3/gallery/search?q=everything?`, {
+    fetch(`https://api.imgur.com/3/gallery/search?q=everything`, {
         method: 'get',
         headers: {
           "Authorization": 'Client-ID 449d22197eed5ec'
@@ -46,8 +67,8 @@ export function searchImages(title) {
           console.log("no data")
         }
         
-        const images = json.data.slice(0,40)
-        dispatch(fetchedImages(images))
+        // const images = json.data.slice(0,40)
+        dispatch(fetchedImages(json.data))
       })
   }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import About from './components/about/about'
 import ImageContainer from './components/image/ImageContainer'
 import Header from './components/header/Header'
 import { Route, Redirect} from "react-router-dom";
@@ -13,7 +14,8 @@ class App extends Component {
 	       </div>
 	       <div className="container">
          	<Route path="/images" render={(props) => <ImageContainer {...props} /> } />
-	      </div>
+          <Route path="/about" component={About} />
+	       </div>
       </div>
     );
   }
