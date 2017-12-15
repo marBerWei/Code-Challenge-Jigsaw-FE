@@ -30,14 +30,18 @@ class ImageSearch extends React.Component {
 
 	render(){
 		return(
-			<div className="searchContainer">
+			
+			
 				<div className="search">
 					<form onSubmit= {this.onSubmit}>
+						<div className="searchButton">
 						<input className="searchBox" onChange={this.onChange} placeholder="Search..."/>
-						<input type="submit" />
+						
+						</div>
 					</form>
 				</div>
-			</div>
+			
+			
 		)
 	}
 }

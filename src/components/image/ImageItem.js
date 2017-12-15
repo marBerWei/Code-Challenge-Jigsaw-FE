@@ -2,6 +2,7 @@ import React from 'react'
 import CommentExample from './CommentBox'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import ModalExampleControlled from './ModalExample'
+import { Link } from 'react-router-dom'
 
 class ImageItem extends React.Component {
 
@@ -20,29 +21,36 @@ class ImageItem extends React.Component {
 	// }
 
 	render(){
-		
+		let imageId = ''
 		let displayImage = ''
 		if(this.props.image.images){
 			//console.log(this.props.image.images)
 			displayImage = this.props.image.images[0].link
+			imageId = this.props.image.images[0].id
 		} else {
 			//console.log("no nesting")
 			displayImage = this.props.image.link
+			imageId = this.props.image.id
 		}
+
+		console.log(imageId)
 		return(
 
+			
 			<div className="item">
-
-		     <img onClick={this.handleClick}  className="thumb" src={displayImage}/>
-		     <p>{this.props.image.title}</p>
-		       <div className="image-overlay">
-                <div className="text">
-                	<a> <ModalExampleControlled img={displayImage}/> </a>
-                </div>
-               </div>
-              
-
+				<div className="itemBackground">
+			     <img onClick={this.handleClick}  className="thumb" src={displayImage}/>
+			     <div className="imageText">{this.props.image.title}</div>
+			  </div>
+			  
+			  <div className="image-overlay">
+	          <div className="text">
+	          	<Link to={"/images/" + imageId} >add a comment</Link>
+	            <a><ModalExampleControlled img={displayImage}/></a>
+	          </div>
+	      </div>
 			</div>
+			
 		)
 	}
 }

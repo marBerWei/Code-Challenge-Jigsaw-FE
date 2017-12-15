@@ -11,19 +11,19 @@ export default class ModalExampleControlled extends Component {
   render() {
     return (
       <Modal
-        trigger={<h1 onClick={this.handleOpen}>Click to Expand</h1>}
+        trigger={<div className="modalButton" onClick={this.handleOpen}>
+        Click to Expand
+        </div>}
         open={this.state.modalOpen}
         onClose={this.handleClose}
         basic
-        size='Fullscreen'
+        // size='Large'
       >
-        <Modal.Content image className="modalPic">
-          <Image wrapped src={this.props.img}/>
+        <Modal.Content image>
+          <Image className="modalPic" src={this.props.img}/>
         </Modal.Content>
         <Modal.Actions>
-          <Button color='red' onClick={this.handleClose} inverted>
-            <Icon name='checkmark' /> Close
-          </Button>
+          
         </Modal.Actions>
       </Modal>
     )
