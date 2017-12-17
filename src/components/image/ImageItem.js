@@ -13,7 +13,7 @@ class ImageItem extends React.Component {
 	}
 
 	render(){
-		console.log(this.props)
+		//console.log(this.props)
 		let imageId = ''
 		let displayImage = ''
 		if(this.props.image.images){

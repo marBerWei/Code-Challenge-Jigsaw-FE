@@ -10,7 +10,7 @@ export default class ModalExampleControlled extends Component {
   handleClose = () => this.setState({ modalOpen: false })
 
   render() {
-    console.log(this.props)
+    //console.log(this.props)
     return (
       <Modal
         trigger={<div className="modalButton" onClick={this.handleOpen}>

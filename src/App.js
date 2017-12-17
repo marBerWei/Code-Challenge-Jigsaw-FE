@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
 import About from './components/about/about'
+import { fetchImages, searchImages, currentList } from './actions/image'
 import ImageContainer from './components/image/ImageContainer'
 import Header from './components/header/Header'
 import { Route, Redirect} from "react-router-dom";
+import { connect } from 'react-redux'
 
 class App extends Component {
+  componentDidMount() {
+      this.props.fetchImages()
+  }
+
+  setCurrentList = () => {
+    this.props.currentList(this.props.originalList)
+  }
+
   render() {
     return (
       <div className="App">
@@ -13,12 +23,36 @@ class App extends Component {
 	       	<Header />
 	       </div>
 	       <div className="container">
-         	<Route path="/images" render={(props) => <ImageContainer {...props} /> } />
-          <Route path="/about" component={About} />
+         	<Route exact path="/" render={(props) => <ImageContainer currentList={this.setCurrentList()} {...props} /> } />
 	       </div>
       </div>
     );
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+    filter: state.filter,
+    images: state.currentList,
+    isFetching: state.isFetching,
+    originalList: state.originalList,
+    currentList: state.currentList
+  }
+}
+
+
+function mapDispatchToProps(dispatch) {
+  return {
+    fetchImages: () => {
+                /// action creator from './actions/images'
+      dispatch(fetchImages())
+    },
+    currentList: (images) => {
+                /// action creator from './actions/images'
+      dispatch(currentList(images))
+    }
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

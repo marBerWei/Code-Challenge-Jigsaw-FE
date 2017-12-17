@@ -27,12 +27,15 @@ class ImageSearch extends React.Component {
 		event.preventDefault()
 		this.props.searchImages(this.state.searchParams)
 		this.props.searchTerm(this.state.searchParams)
+		// filter over the searchedImages and set the currentList
+		// based on the filters
 		this.props.history.push('/images')
+		console.log(this.props.images)
 	}
 
 
 	render(){
-		console.log(this.props)
+		//console.log(this.props)
 		return(
 				
 			
@@ -52,6 +55,7 @@ class ImageSearch extends React.Component {
 function mapStateToProps(state) {
   return {
     filter: state.filter,
+    images: state.currentList
   }
 }
 

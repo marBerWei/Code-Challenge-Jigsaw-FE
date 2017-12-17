@@ -4,8 +4,17 @@ import { filterImages, searchImages} from '../../actions/image'
 
 class Filter extends React.Component { 
 
-	onClick1 = () => {
+	state ={
+		clicked: false,
+		type: ''
+	}
+
+	onMouseOver1 = () => {
 		console.log("hello from nsfw")
+		this.setState({
+			clicked: true,
+			type: 'nsfw'
+		})
 		// connect to state and filter
 		// this.props.images by "nsfw" in
 		// metadata
@@ -14,22 +23,35 @@ class Filter extends React.Component {
 		// to the displayImages action or something
 	}
 
-	onClick2 = () => {
+	onMouseOver2 = () => {
 		console.log("hello from pix")
+		this.setState({
+			clicked: true,
+			type: 'pix'
+		})
 	}
 
-	onClick3 = () => {
+	onMouseOver3 = () => {
 		console.log("hello from gifs")
+		this.setState({
+			clicked: true,
+			type: 'gifs'
+		})
+	}
+
+	onClick = () => {
+		this.props.filterImages(this.state)
+		this.props.searchImages(this.props.searchTerm)
 	}
 
 	render(){
 		return (
-	   <div class="dropdown">
-		  <button class="dropbtn">Filter</button>
-		  <div class="dropdown-content">
-		    <a onClick={this.onClick1}>NSFW</a>
-		    <a onClick={this.onClick2}>PIX</a>
-		    <a onClick={this.onClick3}>GIFS</a>
+	   <div className="dropdown">
+		  <button className="dropbtn">Filter</button>
+		  <div className="dropdown-content">
+		    <a onMouseOver={this.onMouseOver1} onClick={this.onClick}>NSFW</a>
+		    <a onMouseOver={this.onMouseOver2} onClick={this.onClick}>MEME</a>
+		    <a onMouseOver={this.onMouseOver3} onClick={this.onClick}>GIFS/IMG</a>
 		  </div>
 		</div>
 		)

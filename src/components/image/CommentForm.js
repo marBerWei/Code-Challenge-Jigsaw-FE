@@ -76,7 +76,7 @@ class CommentForm extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    images: state.list
+    images: state.currentList
   }
 }
 

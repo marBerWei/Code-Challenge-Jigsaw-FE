@@ -13,9 +13,9 @@ class ImageContainer extends React.Component {
 		clicked: false
 	}
 	
-	componentDidMount() {
-    	this.props.fetchImages()
-  }
+	// componentDidMount() {
+ //    	this.props.fetchImages()
+ //  }
 
   onClick = () => {
 		this.setState({ clicked: true })
@@ -23,32 +23,28 @@ class ImageContainer extends React.Component {
 	}
 
   isFiltered =() => {
-    if(this.props.filter.isFiltered === true){
-        console.log("true filter from the container")
+    if(this.props.filter !== undefined){
+      console.log(this.props.filter.type)
     }
-  }
-
-  images = () => {
-    return this.props.images.filter(image => image.type !== "video/mp4")
+    //this.images(this.props.filter.type)
   }
 
 	render(){
-    
+
+    let images = ''
+    if(this.props.filter.type === 'nsfw'){
+      images = this.props.images.filter(image => image.nsfw === true)
+    } else if (this.props.filter.type === 'pix') {
+      images = this.props.images.filter(image => image.type === "image/png")
+    } else if (this.props.filter.type === 'gif') {
+      images = this.props.images.filter(image => image.images[0].type === "image/gif")
+    } else {
+      images = this.props.images
+    }
+
 		return(
       <div>
-			<Route exact path="/images" render={(props) => <ImageList images={this.props.images} {...props} />}/>
-        <Route path="/images/:id" render={(routeProps) => {         
-          const id = routeProps.match.params.id
-          const image = this.props.images.filter((image) => {
-            if(image.images){
-              return image.images[0].id === id
-            } else {
-              return image.id === id
-            }
-          })
-          console.log(image)
-          return <ImageDetails image={image} {...routeProps} />
-      }} />
+			 <ImageList images={images} />
       </div>
 		)
 	}
@@ -57,7 +53,7 @@ class ImageContainer extends React.Component {
 function mapStateToProps(state) {
   return {
     filter: state.filter,
-    images: state.list,
+    images: state.originalList,
     isFetching: state.isFetching
   }
 }
