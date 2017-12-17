@@ -3,7 +3,6 @@ import ImageList from './ImageList'
 //import { fetchImages, searchImages } from '../../actions/image'
 import ImageSearch from './ImageSearch'
 import { connect } from 'react-redux'
-import ImageDetails from './ImageDetails'
 import { Route, Link, Switch, Redirect } from 'react-router-dom'
 import ModalExampleControlled from './ModalExample'
 
