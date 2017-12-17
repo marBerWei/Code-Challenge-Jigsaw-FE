@@ -1,6 +1,7 @@
 import React from 'react'
 import { fetchImages, searchImages, searchTerm } from '../../actions/image'
 import { connect } from 'react-redux'
+import { withRouter } from 'react-router'
 
 class ImageSearch extends React.Component {
 
@@ -26,18 +27,19 @@ class ImageSearch extends React.Component {
 		event.preventDefault()
 		this.props.searchImages(this.state.searchParams)
 		this.props.searchTerm(this.state.searchParams)
+		this.props.history.push('/images')
 	}
 
 
 	render(){
+		console.log(this.props)
 		return(
-			
+				
 			
 				<div className="search">
 					<form onSubmit= {this.onSubmit}>
 						<div className="searchButton">
 						<input className="searchBox" onChange={this.onChange} placeholder="Search..."/>
-						
 						</div>
 					</form>
 				</div>
@@ -69,4 +71,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (ImageSearch)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps) (ImageSearch))

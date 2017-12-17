@@ -2,12 +2,12 @@ import React from 'react'
 import {addComment} from '../../actions/image'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
-
+import { withRouter } from 'react-router'
 class CommentForm extends React.Component {
 	state = {
 		author: '',
 		text: '',
-		time: Date.now()
+		imgIndex: ''
 	}
 
 	onNameChange = (event) => {
@@ -23,18 +23,27 @@ class CommentForm extends React.Component {
 		this.setState({
 			text: event.target.value
 		})
+		const pathName = this.props.location.pathname.slice(8)
+
+		const currImage = this.props.images.filter(img => {
+		  return img.cover === pathName
+		})
+		const currIndex = this.props.images.indexOf(currImage[0])
+		// now use the currIndex to add this.state to the comment array
+		// in the redux store
+		// this action should take in an index and a comment 
+		console.log(currIndex)
+		this.setState({
+			imgIndex: currIndex
+		})
 		
 	}
 
+
 	onSubmit= (event) => {
 		event.preventDefault()
-		
-		const currImage = this.props.images.filter(img => {
-		  return img.id === this.props.image[0].id
-		})
-		// currImage.comments.push("something")
-		console.log(currImage)
 		this.props.addComment(this.state)
+		this.props.history.push(this.props.location)
 	}
 
   render(){
@@ -76,4 +85,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentForm))

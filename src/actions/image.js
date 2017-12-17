@@ -4,10 +4,11 @@ function fetchingImages() {
   }
 }
 
-export function addComment(comment){
+export function addComment(comment, id){
   return {
     type:"ADD_COMMENT",
-    payload: comment
+    payload: comment,
+    id: id
   }
 }
 

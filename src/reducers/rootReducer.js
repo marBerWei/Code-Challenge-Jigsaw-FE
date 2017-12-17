@@ -4,7 +4,6 @@ function rootReducer(
     list: [], 
     searchTerm: 'everything', 
     filter: [{isFiltered: false, filterType:''}],
-    comment:[]
   }, action) 
   {
   switch (action.type) {
@@ -21,7 +20,7 @@ function rootReducer(
     case "FETCHING_IMAGES":
       return Object.assign({}, state, { isFetching: true})
     case "ADD_COMMENT":
-      return Object.assign({}, state, {comment: [action.payload]})
+      state.list[action.payload.imgIndex].comments.push({author:action.payload.author, text:action.payload.text})
     default:
       return state
   }

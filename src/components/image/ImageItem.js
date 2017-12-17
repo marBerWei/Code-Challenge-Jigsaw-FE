@@ -11,15 +11,6 @@ class ImageItem extends React.Component {
 		opened:false
 	}
 
-	// handleClick = (event) => {
-	// 	event.preventDefault()
-	// }
-
-	// popUp = (event) =>{
-	// 	event.preventDefault()
-	// 	this.setState({opened:true})
-	// }
-
 	render(){
 		let imageId = ''
 		let displayImage = ''
@@ -40,7 +31,7 @@ class ImageItem extends React.Component {
 			<div className="item">
 				<div className="itemBackground">
 			     <img onClick={this.handleClick}  className="thumb" src={displayImage}/>
-			     <div className="imageText">{this.props.image.title}</div>
+			     <div className="imageText">{this.props.image.title.slice(0,20)}...</div>
 			  </div>
 			  
 			  <div className="image-overlay">
