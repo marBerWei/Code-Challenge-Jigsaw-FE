@@ -2,7 +2,6 @@ import React from 'react'
 import NavBar from './NavBar'
 import Name from './Name'
 import ImageSearch from '../image/ImageSearch'
-import ImageRadioButton from '../image/ImageRadioButtons'
 import Filter from '../image/filter'
 import { Route, Link, Switch, Redirect } from 'react-router-dom'
 

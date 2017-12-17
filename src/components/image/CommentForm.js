@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 class CommentForm extends React.Component {
 	state = {
-		author: null,
-		text: null,
+		author: '',
+		text: '',
 		imgIndex: ''
 	}
 
@@ -40,7 +40,12 @@ class CommentForm extends React.Component {
 
 	onSubmit= (event) => {
 		event.preventDefault()
-		this.props.onCommentSubmit(this.state)
+		if(!this.state.author || !this.state.text){
+			alert("please enter valid info")
+		} else {
+			this.props.onCommentSubmit(this.state)
+		}
+		
 		document.getElementById("myForm").reset();
 	}
 

@@ -13,7 +13,7 @@ class Filter extends React.Component {
 		console.log("hello from nsfw")
 		this.setState({
 			clicked: true,
-			type: 'nsfw'
+			type: 'NSFW'
 		})
 		// connect to state and filter
 		// this.props.images by "nsfw" in
@@ -27,7 +27,7 @@ class Filter extends React.Component {
 		console.log("hello from pix")
 		this.setState({
 			clicked: true,
-			type: 'pix'
+			type: 'PIX'
 		})
 	}
 
@@ -35,15 +35,15 @@ class Filter extends React.Component {
 		console.log("hello from gifs")
 		this.setState({
 			clicked: true,
-			type: 'gifs'
+			type: 'GIFS'
 		})
 	}
 
 	onMouseOver4 = () => {
-		console.log("hello from all")
+		console.log("hello from none")
 		this.setState({
 			clicked: true,
-			type: 'all'
+			type: 'FILTER'
 		})
 	}
 
@@ -55,12 +55,12 @@ class Filter extends React.Component {
 	render(){
 		return (
 	   <div className="dropdown">
-		  <button className="dropbtn">Filter</button>
+		  <button className="dropbtn">{this.props.filter ? this.props.filter.type : 'FILTER'}</button>
 		  <div className="dropdown-content">
 		    <a onMouseOver={this.onMouseOver1} onClick={this.onClick}>NSFW</a>
 		    <a onMouseOver={this.onMouseOver2} onClick={this.onClick}>PIX</a>
 		    <a onMouseOver={this.onMouseOver3} onClick={this.onClick}>GIFS</a>
-		    <a onMouseOver={this.onMouseOver4} onClick={this.onClick}>ALL</a>
+		    <a onMouseOver={this.onMouseOver4} onClick={this.onClick}>NO FILTER</a>
 		  </div>
 		</div>
 		)
@@ -70,7 +70,8 @@ class Filter extends React.Component {
 function mapStateToProps(state) {
   return {
     searchTerm: state.searchTerm,
-    images: state.list
+    images: state.list,
+    filter: state.filter
   }
 }
 
