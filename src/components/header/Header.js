@@ -3,6 +3,7 @@ import NavBar from './NavBar'
 import Name from './Name'
 import ImageSearch from '../image/ImageSearch'
 import ImageRadioButton from '../image/ImageRadioButtons'
+import Filter from '../image/filter'
 import { Route, Link, Switch, Redirect } from 'react-router-dom'
 
 class Header extends React.Component {
@@ -11,7 +12,7 @@ class Header extends React.Component {
 		  <div className="header">
 			  <Name />
 			  <ImageSearch routeProps= { Route, Link, Switch, Redirect }/>
-			  <ImageRadioButton/>
+			  <Filter />
 			  <NavBar/>
 		  </div>
 		)
@@ -20,3 +21,4 @@ class Header extends React.Component {
 
 export default Header
 
+// <ImageRadioButton/>

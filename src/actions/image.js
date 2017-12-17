@@ -51,6 +51,8 @@ export function fetchImages() {
   }
 }
 
+
+// this may not be correct
 export function searchImages(title) {
   return function (dispatch) {
     dispatch(fetchingImages())

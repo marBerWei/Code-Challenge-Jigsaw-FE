@@ -1,12 +1,12 @@
 import React from 'react'
-import {addComment} from '../../actions/image'
+//import {addComment} from '../../actions/image'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 class CommentForm extends React.Component {
 	state = {
-		author: '',
-		text: '',
+		author: null,
+		text: null,
 		imgIndex: ''
 	}
 
@@ -22,7 +22,7 @@ class CommentForm extends React.Component {
 		event.preventDefault()
 		this.setState({
 			text: event.target.value
-		})
+	})
 
 		const currImage = this.props.images.filter(img => {
 		  return img.cover === this.props.image.slice(20,27)
@@ -38,18 +38,25 @@ class CommentForm extends React.Component {
 		
 	}
 
+	resetState = () => {
+		this.setState({
+			author: null,
+			text: null
+		})
+	}
+
 
 	onSubmit= (event) => {
 		event.preventDefault()
-		this.props.addComment(this.state)
-		this.props.history.push(this.props.location)
+		this.props.onCommentSubmit(this.state)
+		this.resetState()
 	}
 
   render(){
 
 	return(
       <form onSubmit={this.onSubmit} className="commentForm">
-        <input 
+        <input
         	className="nameForm" 
         	type="text" 
         	placeholder="Your name" 
@@ -75,10 +82,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    addComment: (comment) => {
-                /// action creator from './actions/images'
-      dispatch(addComment(comment))
-    }
+    // addComment: (comment) => {
+    //             /// action creator from './actions/images'
+    //   dispatch(addComment(comment))
+    // }
   
   }
 }

@@ -3,7 +3,8 @@ import CommentExample from './CommentBox'
 import { Button, Comment, Form, Header } from 'semantic-ui-react'
 import ModalExampleControlled from './ModalExample'
 import { Link } from 'react-router-dom'
-
+import { connect } from 'react-redux'
+//import { addComment } from '../../actions/image'
 class ImageItem extends React.Component {
 
 	state={
@@ -12,6 +13,7 @@ class ImageItem extends React.Component {
 	}
 
 	render(){
+		console.log(this.props)
 		let imageId = ''
 		let displayImage = ''
 		if(this.props.image.images){
@@ -44,6 +46,16 @@ class ImageItem extends React.Component {
 		)
 	}
 }
+
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     addComment: (stuff) => {
+//                 /// action creator from './actions/images'
+//       dispatch(addComment(stuff))
+//     }
+//   }
+// }
+
 
 export default ImageItem
 

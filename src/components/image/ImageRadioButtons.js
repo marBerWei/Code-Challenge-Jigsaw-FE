@@ -15,7 +15,19 @@ class ImageRadioButtons extends React.Component {
   onClick = () => {
   	// this.props.filterImages(this.state.value)
     this.props.searchImages(this.state.value)
+    // filter the current list of searches where the 
+    // metadata includes the thing you are filtering by
 	}
+
+  // onClickNSFW = () => {
+  //     // const filteredNSFW = this.props.images.filter(image => {
+  //     //     image.nsfw === true
+  //     // })
+
+  //     console.log('filter')
+  //   // filter the current list of searches where the 
+  //   // metadata includes the thing you are filtering by
+  // }
 
 	render(){
 		console.log(this.props.searchTerm + 'nsfw')
@@ -30,18 +42,29 @@ class ImageRadioButtons extends React.Component {
             value='nsfw'
             checked={this.state.value === 'nsfw'}
             onChange={this.handleChange}
-            onClick={this.onClick(this.props.searchTerm + 'nsfw')}
+            // onClick={this.onClickNSFW()}
           />
         </Form.Field>
         <Form.Field>
           <Radio
           	className="radio"
-            label='CUTE'
+            label='GIF'
             name='radioGroup'
-            value='cute'
-            checked={this.state.value === 'cute'}
+            value='gif'
+            checked={this.state.value === 'gif'}
             onChange={this.handleChange}
-            onClick={this.onClick('cute')}
+            onClick={this.onClick('gif')}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Radio
+            className="radio"
+            label='PIX'
+            name='radioGroup'
+            value='pix'
+            checked={this.state.value === 'pix'}
+            onChange={this.handleChange}
+            onClick={this.onClick('pix')}
           />
         </Form.Field>
         <Form.Field>
@@ -63,6 +86,7 @@ class ImageRadioButtons extends React.Component {
 function mapStateToProps(state) {
   return {
     searchTerm: state.searchTerm,
+    images: state.list
   }
 }
 
