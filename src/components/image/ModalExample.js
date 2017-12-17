@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Header, Icon, Modal, Image } from 'semantic-ui-react'
+import CommentBox from './CommentBox'
 
 export default class ModalExampleControlled extends Component {
   state = { modalOpen: false }
@@ -9,6 +10,7 @@ export default class ModalExampleControlled extends Component {
   handleClose = () => this.setState({ modalOpen: false })
 
   render() {
+    console.log(this.props)
     return (
       <Modal
         trigger={<div className="modalButton" onClick={this.handleOpen}>
@@ -22,6 +24,10 @@ export default class ModalExampleControlled extends Component {
         <Modal.Content image>
           <Image className="modalPic" src={this.props.img}/>
         </Modal.Content>
+         <Modal.Content image>
+          <CommentBox image={this.props.img}/>
+        </Modal.Content>
+
         <Modal.Actions>
           
         </Modal.Actions>

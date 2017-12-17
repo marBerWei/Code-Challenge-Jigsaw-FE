@@ -23,10 +23,9 @@ class CommentForm extends React.Component {
 		this.setState({
 			text: event.target.value
 		})
-		const pathName = this.props.location.pathname.slice(8)
 
 		const currImage = this.props.images.filter(img => {
-		  return img.cover === pathName
+		  return img.cover === this.props.image.slice(20,27)
 		})
 		const currIndex = this.props.images.indexOf(currImage[0])
 		// now use the currIndex to add this.state to the comment array

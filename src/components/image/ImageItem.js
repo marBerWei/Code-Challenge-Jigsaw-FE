@@ -37,7 +37,6 @@ class ImageItem extends React.Component {
 			  <div className="image-overlay">
 	          <div className="text">
 	            <a><ModalExampleControlled img={displayImage}/></a>
-	            <Link to={"/images/" + imageId} >add a comment</Link>
 	          </div>
 	      </div>
 			</div>
@@ -47,3 +46,5 @@ class ImageItem extends React.Component {
 }
 
 export default ImageItem
+
+// <Link to={"/images/" + imageId} >add a comment</Link>

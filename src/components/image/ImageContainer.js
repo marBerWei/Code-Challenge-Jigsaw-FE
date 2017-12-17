@@ -36,7 +36,7 @@ class ImageContainer extends React.Component {
     
 		return(
       <div>
-			<Route exact path="/images" render={(props) => <ImageList images={this.images()} {...props} />}/>
+			<Route exact path="/images" render={(props) => <ImageList images={this.props.images} {...props} />}/>
         <Route path="/images/:id" render={(routeProps) => {         
           const id = routeProps.match.params.id
           const image = this.props.images.filter((image) => {
