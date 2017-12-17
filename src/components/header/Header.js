@@ -13,7 +13,6 @@ class Header extends React.Component {
 			  <Name />
 			  <ImageSearch routeProps= { Route, Link, Switch, Redirect }/>
 			  <Filter />
-			  <NavBar/>
 		  </div>
 		)
 	}

@@ -9,18 +9,29 @@ import ModalExampleControlled from './ModalExample'
 class ImageContainer extends React.Component {
 
 	render(){
-
+    let filteredImages = this.props.images.filter(image => image.images !== undefined)
+    console.log(filteredImages)
     let images = ''
     if(this.props.filter.type === 'nsfw'){
-      images = this.props.images.filter(image => image.nsfw === true)
-    } else if (this.props.filter.type === 'pix') {
-      images = this.props.images.filter(image => image.type === "image/png")
-    } else if (this.props.filter.type === 'gif') {
-      images = this.props.images.filter(image => image.images[0].animated !== false)
-      // this shit aint working
+      images = filteredImages.filter(image => image.nsfw === true )
+    } else if(this.props.filter.type === 'pix'){
+      images = filteredImages.filter(image => image.images[0].type === "image/jpeg")
+    } else if(this.props.filter.type === 'gifs') {
+      images = filteredImages.filter(image => image.images[0].animated === true)
     } else {
-      images = this.props.images
+      images = filteredImages
     }
+
+    // if(this.props.filter.type === 'nsfw'){
+    //   images = this.props.images.filter(image => image.nsfw === true)
+    // } else if (this.props.filter.type === 'pix') {
+    //   images = this.props.images.filter(image => image.type === "image/png")
+    // } else if (this.props.filter.type === 'gif') {
+    //   images = this.props.images.filter(image => image.images[0].animated !== false)
+    //   // this shit aint working
+    // } else {
+    //   images = this.props.images
+    // }
 
 		return(
       <div>

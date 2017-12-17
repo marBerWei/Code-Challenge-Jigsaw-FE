@@ -39,6 +39,14 @@ class Filter extends React.Component {
 		})
 	}
 
+	onMouseOver4 = () => {
+		console.log("hello from all")
+		this.setState({
+			clicked: true,
+			type: 'all'
+		})
+	}
+
 	onClick = () => {
 		this.props.filterImages(this.state)
 		this.props.searchImages(this.props.searchTerm)
@@ -50,8 +58,9 @@ class Filter extends React.Component {
 		  <button className="dropbtn">Filter</button>
 		  <div className="dropdown-content">
 		    <a onMouseOver={this.onMouseOver1} onClick={this.onClick}>NSFW</a>
-		    <a onMouseOver={this.onMouseOver2} onClick={this.onClick}>MEME</a>
-		    <a onMouseOver={this.onMouseOver3} onClick={this.onClick}>GIFS/IMG</a>
+		    <a onMouseOver={this.onMouseOver2} onClick={this.onClick}>PIX</a>
+		    <a onMouseOver={this.onMouseOver3} onClick={this.onClick}>GIFS</a>
+		    <a onMouseOver={this.onMouseOver4} onClick={this.onClick}>ALL</a>
 		  </div>
 		</div>
 		)

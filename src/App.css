@@ -10,7 +10,7 @@
   padding-right: 5px;
   padding-bottom: 5px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   background-color: white;
   border-bottom: 2px solid #f0f0f5;
 }
@@ -52,7 +52,7 @@
   padding: 40px;
   /*background-color: pink;*/
   color: black;
-  grid-column: 20%;
+  grid-column: 0%;
   /*height: 40px;*/
   /*font-size: 40px;*/
 }
@@ -80,7 +80,7 @@
 
 .search{
   padding: 15px;
-  grid-column: 100%%;
+  grid-column: 30%;
   padding-left: 40px
   /*border: #c5d5cb solid 10px;*/
 }
@@ -114,7 +114,7 @@
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
-    grid-column: 20%;
+    grid-column: 30%;
     padding: 25px;
     position: relative;
     display: inline-block;
@@ -320,27 +320,6 @@
 .textModal{
   font-size: 25px
 }
-
-/*Image Details*/
-
-/*.imageBackground{
-  padding-top: 100px;
-  padding-left: 35%;
-  padding-right: 35%;
-  padding-bottom: 200px;
-  background: #EDEDED;;
-}*/
-/*
-.imageDetails{
-  background: white;
-  border: 5px purple solid;
-  padding: 20px;
-}
-
-.detailImage{
-  max-height: 1000px;
-  width: 100%;
-}*/
 
 /*COMMENTS*/
 
