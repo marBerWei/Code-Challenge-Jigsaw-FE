@@ -24,6 +24,9 @@ export default class ModalExampleControlled extends Component {
         <Modal.Content image>
           <Image className="modalPic" src={this.props.img}/>
         </Modal.Content>
+        <Modal.Content>
+          <div className="textModal">"{this.props.title}"</div>
+        </Modal.Content>
          <Modal.Content image>
           <CommentBox image={this.props.img}/>
         </Modal.Content>

@@ -38,37 +38,31 @@ class CommentForm extends React.Component {
 		
 	}
 
-	resetState = () => {
-		this.setState({
-			author: null,
-			text: null
-		})
-	}
-
-
 	onSubmit= (event) => {
 		event.preventDefault()
 		this.props.onCommentSubmit(this.state)
-		this.resetState()
+		document.getElementById("myForm").reset();
 	}
 
   render(){
 
 	return(
-      <form onSubmit={this.onSubmit} className="commentForm">
+      <form id="myForm" onSubmit={this.onSubmit} className="commentForm">
         <input
         	className="nameForm" 
         	type="text" 
+        	// value=""
         	placeholder="Your name" 
         	onChange={this.onNameChange}
         />
         <input 
         	className="textForm" 
-        	type="text" 
+        	type="text"
+        	// value="" 
         	placeholder="Say something..."
         	onChange={this.onCommentChange} 
         />
-        <input type="submit" />
+        <input className="submitButton" type="submit" />
       </form>
   	)
 	}

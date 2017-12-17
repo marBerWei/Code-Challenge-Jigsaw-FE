@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 
 class CommentBox extends React.Component {
 
+  
 
   onCommentSubmit = (stuff) => {
       this.props.addComment(stuff)
@@ -13,8 +14,6 @@ class CommentBox extends React.Component {
   }
 
   render(){
-
-    
 
     let currentId = this.props.image.slice(20,27)
     const currImage = this.props.images.filter(img => {

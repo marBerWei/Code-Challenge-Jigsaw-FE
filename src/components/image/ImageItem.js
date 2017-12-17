@@ -33,12 +33,14 @@ class ImageItem extends React.Component {
 			<div className="item">
 				<div className="itemBackground">
 			     <img onClick={this.handleClick}  className="thumb" src={displayImage}/>
-			     <div className="imageText">{this.props.image.title.slice(0,20)}...</div>
+			     
 			  </div>
 			  
 			  <div className="image-overlay">
 	          <div className="text">
-	            <a><ModalExampleControlled img={displayImage}/></a>
+	          	<div className="imageText">{this.props.image.title.slice(0,20)}...</div>
+	            <a><ModalExampleControlled img={displayImage} title={this.props.image.title}/></a>
+	            <div className="imageTextSmall">{this.props.image.comments.length} comments</div>
 	          </div>
 	      </div>
 			</div>

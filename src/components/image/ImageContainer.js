@@ -9,26 +9,6 @@ import ModalExampleControlled from './ModalExample'
 
 class ImageContainer extends React.Component {
 
-	// state ={
-	// 	clicked: false
-	// }
-	
-	// // componentDidMount() {
- // //    	this.props.fetchImages()
- // //  }
-
- //  onClick = () => {
-	// 	this.setState({ clicked: true })
-	// 	//console.log(this.state.clicked)
-	// }
-
- //  isFiltered =() => {
- //    if(this.props.filter !== undefined){
- //      console.log(this.props.filter.type)
- //    }
- //    //this.images(this.props.filter.type)
- //  }
-
 	render(){
 
     let images = ''
@@ -59,24 +39,4 @@ function mapStateToProps(state) {
 }
 
 
-// function mapDispatchToProps(dispatch) {
-//   return {
-//     fetchImages: () => {
-//                 /// action creator from './actions/images'
-//       dispatch(fetchImages())
-//     },
-//     searchImages: (title) => {
-//                 /// action creator from './actions/images'
-//       dispatch(searchImages(title))
-//     }
-//   }
-// }
-
-
-
 export default connect(mapStateToProps)(ImageContainer)
-
-
-
-// <ImageList onClick={this.onClick} images={images}/>
-
