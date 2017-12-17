@@ -1,6 +1,6 @@
 import React from 'react'
 import ImageList from './ImageList'
-import { fetchImages, searchImages } from '../../actions/image'
+//import { fetchImages, searchImages } from '../../actions/image'
 import ImageSearch from './ImageSearch'
 import { connect } from 'react-redux'
 import ImageDetails from './ImageDetails'
@@ -9,25 +9,25 @@ import ModalExampleControlled from './ModalExample'
 
 class ImageContainer extends React.Component {
 
-	state ={
-		clicked: false
-	}
+	// state ={
+	// 	clicked: false
+	// }
 	
-	// componentDidMount() {
- //    	this.props.fetchImages()
+	// // componentDidMount() {
+ // //    	this.props.fetchImages()
+ // //  }
+
+ //  onClick = () => {
+	// 	this.setState({ clicked: true })
+	// 	//console.log(this.state.clicked)
+	// }
+
+ //  isFiltered =() => {
+ //    if(this.props.filter !== undefined){
+ //      console.log(this.props.filter.type)
+ //    }
+ //    //this.images(this.props.filter.type)
  //  }
-
-  onClick = () => {
-		this.setState({ clicked: true })
-		//console.log(this.state.clicked)
-	}
-
-  isFiltered =() => {
-    if(this.props.filter !== undefined){
-      console.log(this.props.filter.type)
-    }
-    //this.images(this.props.filter.type)
-  }
 
 	render(){
 
@@ -37,14 +37,15 @@ class ImageContainer extends React.Component {
     } else if (this.props.filter.type === 'pix') {
       images = this.props.images.filter(image => image.type === "image/png")
     } else if (this.props.filter.type === 'gif') {
-      images = this.props.images.filter(image => image.images[0].type === "image/gif")
+      images = this.props.images.filter(image => image.images[0].animated !== false)
+      // this shit aint working
     } else {
       images = this.props.images
     }
 
 		return(
       <div>
-			 <ImageList images={images} />
+			<ImageList images={images} />
       </div>
 		)
 	}
@@ -53,28 +54,27 @@ class ImageContainer extends React.Component {
 function mapStateToProps(state) {
   return {
     filter: state.filter,
-    images: state.originalList,
-    isFetching: state.isFetching
+    images: state.originalList
   }
 }
 
 
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchImages: () => {
-                /// action creator from './actions/images'
-      dispatch(fetchImages())
-    },
-    searchImages: (title) => {
-                /// action creator from './actions/images'
-      dispatch(searchImages(title))
-    }
-  }
-}
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     fetchImages: () => {
+//                 /// action creator from './actions/images'
+//       dispatch(fetchImages())
+//     },
+//     searchImages: (title) => {
+//                 /// action creator from './actions/images'
+//       dispatch(searchImages(title))
+//     }
+//   }
+// }
 
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ImageContainer)
+export default connect(mapStateToProps)(ImageContainer)
 
 
 

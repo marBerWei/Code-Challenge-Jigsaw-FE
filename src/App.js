@@ -6,6 +6,7 @@ import ImageContainer from './components/image/ImageContainer'
 import Header from './components/header/Header'
 import { Route, Redirect} from "react-router-dom";
 import { connect } from 'react-redux'
+import { Loader } from 'semantic-ui-react'
 
 class App extends Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ class App extends Component {
 	       <div className="headerContainer">
 	       	<Header />
 	       </div>
+         <Loader active={this.props.isFetching} inline />
 	       <div className="container">
          	<Route exact path="/" render={(props) => <ImageContainer currentList={this.setCurrentList()} {...props} /> } />
 	       </div>
