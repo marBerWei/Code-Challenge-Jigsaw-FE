@@ -10,7 +10,7 @@
   padding-right: 5px;
   padding-bottom: 5px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: white;
   border-bottom: 2px solid #f0f0f5;
 }
@@ -31,17 +31,17 @@
 
 .name {
   padding: 40px;
-  grid-column: 30%;
+  grid-column: 1;
   font-family: 'Barlow', sans-serif;
   font-family: 'Leckerli One', cursive;
   font-size: 40px;
   color: #00ace6;
 }
 
-.nav {
+/*.nav {
   padding: 40px;
   color: black;
-  grid-column: 0%;
+  grid-column: 5;
 }
 
 .nav .navItem {
@@ -57,11 +57,11 @@
   transition: .5s background-color;
   border-radius: 20px;
   padding: 15px;
-}
+}*/
 
 .search{
   padding: 15px;
-  grid-column: 30%;
+  grid-column: 2/4;
   padding-left: 40px
 }
 
@@ -77,7 +77,7 @@
   border: rgb(240,240,240) solid 0px;
 }
 
-/* Dropdown Button */
+/* Dropdown Button for Filter */
 .dropbtn {
     background-color: #00ace6;
     color: white;
@@ -90,7 +90,7 @@
 }
 
 .dropdown {
-    grid-column: 30%;
+    grid-column: 4;
     padding: 25px;
     position: relative;
     display: inline-block;
@@ -133,6 +133,19 @@
 
 /*IMAGES*/
 
+.resultsContainer{
+  padding: 15px;
+  padding-left: 60px;
+/*  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;*/
+}
+
+.results{
+  text-align: left;
+  grid-column: 1;
+  font-size: 20px;
+  color: darkgrey;
+}
 
 .flex-container {
   display: grid;

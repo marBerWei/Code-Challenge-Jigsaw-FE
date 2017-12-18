@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 const Name = (props) => {
 	return(
-	  <NavLink className="name" to="/">PIC<strong>STY</strong></NavLink>
+	  <div className="name">PIC<strong>STY</strong></div>
 	)
 }
 

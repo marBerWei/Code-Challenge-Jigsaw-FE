@@ -52,7 +52,7 @@ export function fetchImages() {
       .then((res) => res.json())
       .then((json) => {
         console.log(json.data)
-        const images = json.data.slice(0,20)
+        const images = json.data
         dispatch(fetchedImages(images))
       })
   }
@@ -75,8 +75,7 @@ export function searchImages(title) {
         } else {
           console.log("no data")
         }
-        
-        // const images = json.data.slice(0,40)
+
         dispatch(fetchedImages(json.data))
       })
   }

@@ -43,7 +43,7 @@ class Filter extends React.Component {
 		console.log("hello from none")
 		this.setState({
 			clicked: true,
-			type: 'FILTER'
+			type: ''
 		})
 	}
 
@@ -55,7 +55,7 @@ class Filter extends React.Component {
 	render(){
 		return (
 	   <div className="dropdown">
-		  <button className="dropbtn">{this.props.filter ? this.props.filter.type : 'FILTER'}</button>
+		  <button className="dropbtn">{this.props.filter.type ? this.props.filter.type : 'FILTER'}</button>
 		  <div className="dropdown-content">
 		    <a onMouseOver={this.onMouseOver1} onClick={this.onClick}>NSFW</a>
 		    <a onMouseOver={this.onMouseOver2} onClick={this.onClick}>PIX</a>

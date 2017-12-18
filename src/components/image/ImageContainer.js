@@ -25,7 +25,10 @@ class ImageContainer extends React.Component {
     if(images.length > 0){
       return(
         <div>
-        <ImageList images={images} />
+          <div className="resultsContainer">
+            <div className="results">{images.length} results for "{this.props.results}" {this.props.filter.type !== undefined ? this.props.filter.type : ''} </div>
+          </div>
+          <ImageList images={images} />
         </div>
       )
 
@@ -42,7 +45,8 @@ class ImageContainer extends React.Component {
 function mapStateToProps(state) {
   return {
     filter: state.filter,
-    images: state.originalList
+    images: state.originalList,
+    results: state.searchTerm
   }
 }
 
