@@ -67,7 +67,9 @@ class CommentForm extends React.Component {
         	placeholder="Say something..."
         	onChange={this.onCommentChange} 
         />
+        <div className="buttonBackground">
         <input className="submitButton" type="submit" />
+        </div>
       </form>
   	)
 	}
