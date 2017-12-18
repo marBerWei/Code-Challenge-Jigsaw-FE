@@ -9,7 +9,7 @@ import ModalExampleControlled from './ModalExample'
 class ImageContainer extends React.Component {
 
 	render(){
-    let filteredImages = this.props.images.filter(image => image.images !== undefined)
+    let filteredImages = this.props.images.filter(image => image.images !== undefined).filter(image => parseInt(image.cover_width)/parseInt(image.cover_height) > .8)
     console.log(filteredImages)
     let images = ''
     if(this.props.filter.type === 'NSFW'){
