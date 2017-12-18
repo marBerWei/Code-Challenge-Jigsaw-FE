@@ -1,11 +1,11 @@
-# PicstyBrowse
+# PicstyBrowser
 
 ### App Demo
 https://quizzical-carson-1afe6d.netlify.com/ </br>
 
 
 #### YouTube Demo
-[![Picsty Demo](https://www.youtube.com/upload_thumbnail?v=WeS_gwIzzAg&t=hqdefault&ts=1513614807753.jpg)](https://youtu.be/WeS_gwIzzAg "Picsty Demo")
+[![Picsty Demo](https://i.ytimg.com/vi/WeS_gwIzzAg/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLADTRNfvSahcC3je-cI5oiIZj85aw)](https://youtu.be/WeS_gwIzzAg "Picsty Demo")
 
 
 ### Overview
