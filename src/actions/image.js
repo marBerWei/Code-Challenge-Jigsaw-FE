@@ -43,7 +43,7 @@ function fetchedImages(images) {
 export function fetchImages() {
   return function(dispatch) {
     dispatch(fetchingImages())
-    fetch(`https://api.imgur.com/3/gallery/search?q=everything`, {
+    fetch(`https://api.imgur.com/3/gallery/search?q=puppies`, {
         method: 'get',
         headers: {
           "Authorization": 'Client-ID 449d22197eed5ec'

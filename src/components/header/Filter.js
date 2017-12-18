@@ -1,3 +1,5 @@
+// Filter Dropdown Component in Header
+
 import React from 'react'
 import { connect } from 'react-redux'
 import { filterImages, searchImages} from '../../actions/image'
@@ -15,12 +17,6 @@ class Filter extends React.Component {
 			clicked: true,
 			type: 'NSFW'
 		})
-		// connect to state and filter
-		// this.props.images by "nsfw" in
-		// metadata
-		// action filterImages needs to set the filtered
-		//images category in the store and then pass that
-		// to the displayImages action or something
 	}
 
 	onMouseOver2 = () => {
@@ -70,7 +66,6 @@ class Filter extends React.Component {
 function mapStateToProps(state) {
   return {
     searchTerm: state.searchTerm,
-    images: state.list,
     filter: state.filter
   }
 }
@@ -78,11 +73,9 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     filterImages: (filter) => {
-                /// action creator from './actions/images'
       dispatch(filterImages(filter))
     },
     searchImages: (title) => {
-                /// action creator from './actions/images'
       dispatch(searchImages(title))
     }
   }

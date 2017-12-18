@@ -1,5 +1,7 @@
+// Search Function Component in Header
+
 import React from 'react'
-import { fetchImages, searchImages, searchTerm, filterImages } from '../../actions/image'
+import { searchImages, searchTerm, filterImages } from '../../actions/image'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
 
@@ -27,8 +29,6 @@ class ImageSearch extends React.Component {
 		event.preventDefault()
 		this.props.searchImages(this.state.searchParams)
 		this.props.searchTerm(this.state.searchParams)
-		// filter over the searchedImages and set the currentList
-		// based on the filters
 		this.props.filterImages('')
 		this.props.history.push('/')
 		document.getElementById("mySearchForm").reset();
@@ -36,10 +36,9 @@ class ImageSearch extends React.Component {
 
 
 	render(){
-		//console.log(this.props)
+
 		return(
-				
-			
+	
 				<div className="search">
 					<form id="mySearchForm" onSubmit= {this.onSubmit}>
 						<div className="searchButton">
@@ -47,8 +46,6 @@ class ImageSearch extends React.Component {
 						</div>
 					</form>
 				</div>
-			
-			
 		)
 	}
 }
@@ -62,12 +59,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchImages: () => {
-                /// action creator from './actions/images'
-      dispatch(fetchImages())
-    },
     searchImages: (title) => {
-                /// action creator from './actions/images'
       dispatch(searchImages(title))
     },
     searchTerm: (term) => {

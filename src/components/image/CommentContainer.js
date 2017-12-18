@@ -1,13 +1,15 @@
+//Comment Container 
+//Displays Comment Form and Comment List
+
 import React from 'react'
 import CommentForm from './CommentForm'
 import CommentList from './CommentList'
 import { addComment } from '../../actions/image'
 import { connect } from 'react-redux'
 
-class CommentBox extends React.Component {
+class CommentContainer extends React.Component {
 
-  
-
+  // pass this function down to Comment Form
   onCommentSubmit = (stuff) => {
       this.props.addComment(stuff)
       this.forceUpdate();
@@ -15,14 +17,11 @@ class CommentBox extends React.Component {
 
   render(){
 
+    // Find index of current image in images array from Redux store
     let currentId = this.props.image.slice(20,27)
-    const currImage = this.props.images.filter(img => {
-      return img.cover === currentId
-    })
+    const currImage = this.props.images.filter(img => img.cover === currentId)
     const currIndex = this.props.images.indexOf(currImage[0])
-    console.log('current index', currIndex)
-    console.log('currentId', currentId)
-    console.log('all images accessed at id', this.props.images[currIndex].comments)
+    
     return(
         <div className="commentBox">
           <h1>Comments</h1>
@@ -47,7 +46,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(CommentBox)
+export default connect(mapStateToProps, mapDispatchToProps)(CommentContainer)
 
 
 

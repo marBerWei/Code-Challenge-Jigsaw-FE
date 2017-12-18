@@ -3,7 +3,7 @@ function rootReducer(
     isFetching: false,
     currentList: [], 
     originalList: [], 
-    searchTerm: 'everything', 
+    searchTerm: 'puppies', 
     filter: '',
   }, action) 
   {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import About from './components/about/about'
-import { fetchImages, searchImages, currentList } from './actions/image'
+import { fetchImages, searchImages, currentList} from './actions/image'
 import ImageContainer from './components/image/ImageContainer'
 import Header from './components/header/Header'
 import { Route, Redirect} from "react-router-dom";

@@ -1,22 +1,18 @@
-import React from 'react'
-import NavBar from './NavBar'
-import Name from './Name'
-import ImageSearch from '../image/ImageSearch'
-import Filter from '../image/filter'
-import { Route, Link, Switch, Redirect } from 'react-router-dom'
+// Presentational Header For Top of Page
 
-class Header extends React.Component {
-	render(){
-		return(
-		  <div className="header">
-			  <Name />
-			  <ImageSearch routeProps= { Route, Link, Switch, Redirect }/>
-			  <Filter />
-		  </div>
-		)
-	}
+import React from 'react'
+import Name from './Name'
+import ImageSearch from './ImageSearch'
+import Filter from './Filter'
+
+const Header = () => {
+	return(
+	  <div className="header">
+		  <Name />
+		  <ImageSearch/>
+		  <Filter />
+	  </div>
+	)
 }
 
 export default Header
-
-// <ImageRadioButton/>

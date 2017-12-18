@@ -1,5 +1,6 @@
+//Comment Form 
+
 import React from 'react'
-//import {addComment} from '../../actions/image'
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
@@ -12,29 +13,17 @@ class CommentForm extends React.Component {
 
 	onNameChange = (event) => {
 		event.preventDefault()
-		this.setState({
-			author: event.target.value
-		})
-		
+		this.setState({ author: event.target.value })
 	}
 
 	onCommentChange = (event) => {
 		event.preventDefault()
-		this.setState({
-			text: event.target.value
-	})
+		
+		this.setState({text: event.target.value})
 
-		const currImage = this.props.images.filter(img => {
-		  return img.cover === this.props.image.slice(20,27)
-		})
+		const currImage = this.props.images.filter(img => img.cover === this.props.image.slice(20,27))
 		const currIndex = this.props.images.indexOf(currImage[0])
-		// now use the currIndex to add this.state to the comment array
-		// in the redux store
-		// this action should take in an index and a comment 
-		console.log(currIndex)
-		this.setState({
-			imgIndex: currIndex
-		})
+		this.setState({ imgIndex: currIndex })
 		
 	}
 
@@ -56,14 +45,12 @@ class CommentForm extends React.Component {
         <input
         	className="nameForm" 
         	type="text" 
-        	// value=""
         	placeholder="Your name" 
         	onChange={this.onNameChange}
         />
         <input 
         	className="textForm" 
         	type="text"
-        	// value="" 
         	placeholder="Say something..."
         	onChange={this.onCommentChange} 
         />
@@ -81,15 +68,6 @@ function mapStateToProps(state) {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    // addComment: (comment) => {
-    //             /// action creator from './actions/images'
-    //   dispatch(addComment(comment))
-    // }
-  
-  }
-}
 
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CommentForm))
+export default withRouter(connect(mapStateToProps)(CommentForm))
