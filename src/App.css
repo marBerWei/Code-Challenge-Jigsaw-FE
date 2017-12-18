@@ -19,7 +19,7 @@
   border-top: #00ace6 dashed 5px;
   border-left: #00ace6 dashed 5px;
   border-right: #00ace6 dashed 5px;
-  border-bottom: #00ace6 dashed 5px;
+  /*border-bottom: #00ace6 dashed 5px;*/
 }
 
 .container{
@@ -138,7 +138,7 @@
 
 .flex-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
   flex-grow: 1;
   justify-content: justify;
@@ -422,14 +422,14 @@
   font-weight:bold;
   font-size:18px;
   text-align:center;
-  position:fixed;    
+  /*position:fixed;*/    
   bottom:0;         
   left:0;    
 
 }
 
 .errorPage{
-  border: 3px solid #00ace6 ;
+ /* border: 3px solid #00ace6 ;*/
   font-size: 40px;
   padding-left: 10%;
   padding-right: 10%;
