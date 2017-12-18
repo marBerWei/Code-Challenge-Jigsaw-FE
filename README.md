@@ -9,7 +9,7 @@ https://quizzical-carson-1afe6d.netlify.com/ </br>
 
 
 ### Overview
-  PicstyBrowser is an image browsing tool for users searching for images based on a specific search term.  The tool enables users to filter their search results by metadata such as "nsfw", "pix", and "gifs".  Users can also leave comments through the app and can click on images to expand the view. 
+  PicstyBrowser is an image browsing tool for users searching for images based on a specific search term.  The tool enables users to filter their search results by metadata such as "nsfw", "pix", and "gifs".  Users can also leave comments through the app and can click on images to expand the view. PicstyBrowser uses the Imgur API to source the images.
 
 
 ### Frontend Depedencies for PicstyBrowser
